@@ -541,6 +541,8 @@ while (option != 7 && login)
     if (towlower(cond) == 'y' )
     {
         deleteuser(conn,users);
+        statement.clear();
+        v_users.clear();
         std::cout << "Your account has been deleted successfully exiting...\n";
         login=false;
         break;
@@ -552,6 +554,7 @@ while (option != 7 && login)
     if (tolower(cond) == 'y')
     {
         statement.clear();
+        v_users.clear();
         login =false;
     }else
     std::cout << "Returning...\n";
@@ -565,6 +568,7 @@ while (option != 7 && login)
     PQfinish(conn);
     break;
     default:
+        std::cout << "Invalid input try again\n";
         break;
     }
 }
